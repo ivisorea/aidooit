@@ -1,0 +1,7 @@
+{
+  "name": "aidooit_ionic_react_app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
