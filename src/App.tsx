@@ -1,7 +1,12 @@
-import { Redirect, Route } from 'react-router-dom';
+import { Navigate, Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
+import CreatePost from './pages/CreatePost';
+import Login from './pages/Login';
+import UserProfile from './pages/UserProfile';
+import ProtectedRoute from './pages/ProtectedRoute';
+//import {Outlet} from "react-router-dom"; 
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -28,11 +33,19 @@ const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
       <IonRouterOutlet>
-        <Route exact path="/home">
+        <Route path="/home">
           <Home />
         </Route>
-        <Route exact path="/">
-          <Redirect to="/home" />
+       <Route path="/">
+          <Navigate to="/home" />
+        </Route>
+        <Route path="/login">
+          <Login />
+        </Route>
+        <Route path='protected'element= {<ProtectedRoute/>}>
+          <Route index element= {<UserProfile/>}>
+          <Route path='create-post' element={<CreatePost/>}/>
+        </Route>
         </Route>
       </IonRouterOutlet>
     </IonReactRouter>
