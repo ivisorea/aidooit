@@ -4,7 +4,7 @@ import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
 import CreatePost from './pages/CreatePost';
 import Login from './pages/Login';
-import UserProfile from './pages/UserProfile';
+import UserProfile from './pages/Userprofile';
 import ProtectedRoute from './pages/ProtectedRoute';
 //import {Outlet} from "react-router-dom"; 
 
@@ -43,7 +43,7 @@ const App: React.FC = () => (
           <Login />
         </Route>
         <Route path='protected'element= {<ProtectedRoute/>}>
-          <Route index element= {<UserProfile/>}>
+          <Route element= {<UserProfile/>}>
           <Route path='create-post' element={<CreatePost/>}/>
         </Route>
         </Route>

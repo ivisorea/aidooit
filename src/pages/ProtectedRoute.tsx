@@ -1,4 +1,5 @@
-import {IonRouterOutlet, Navigate} from '@ionic/react-router';
+import { Navigate} from 'react-router-dom';
+import {IonRouterOutlet} from '@ionic/react';
 
 const ProtectedRoute = () => {
 const isAuthenticated = true;
