@@ -1,10 +1,9 @@
-import { Navigate, Route } from 'react-router-dom';
+import {  Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
 import CreatePost from './pages/CreatePost';
 import Login from './pages/Login';
-import UserProfile from './pages/Userprofile';
 import ProtectedRoute from './pages/ProtectedRoute';
 //import {Outlet} from "react-router-dom"; 
 
@@ -25,7 +24,7 @@ import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
 
 /* Theme variables */
-import './theme/variables.css';
+// import './theme/variables.css';
 
 setupIonicReact();
 
@@ -36,17 +35,17 @@ const App: React.FC = () => (
         <Route path="/home">
           <Home />
         </Route>
-       <Route path="/">
-          <Navigate to="/home" />
-        </Route>
+       {/* <Route path="/">
+        <  <Navigate to="/home" />>
+        </Route> */}
         <Route path="/login">
           <Login />
         </Route>
-        <Route path='protected'element= {<ProtectedRoute/>}>
-          <Route element= {<UserProfile/>}>
-          <Route path='create-post' element={<CreatePost/>}/>
+        <Route path='protected'component= {ProtectedRoute}>
+          {/* <Route component= {UserProfile}> */}
+          <Route path='create-post' component={CreatePost}/>
         </Route>
-        </Route>
+    
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>
