@@ -4,6 +4,7 @@ import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
 import CreatePost from './pages/CreatePost';
 import Login from './pages/Login';
+import Register from './pages/Register';
 import ProtectedRoute from './pages/ProtectedRoute';
 //import {Outlet} from "react-router-dom"; 
 
@@ -30,6 +31,7 @@ setupIonicReact();
 
 const App: React.FC = () => (
   <IonApp>
+    
     <IonReactRouter>
       <IonRouterOutlet>
         <Route path="/home">
@@ -40,6 +42,9 @@ const App: React.FC = () => (
         </Route> */}
         <Route path="/login">
           <Login />
+        </Route>
+        <Route path="/register">
+          <Register>
         </Route>
         <Route path='protected'component= {ProtectedRoute}>
           {/* <Route component= {UserProfile}> */}
